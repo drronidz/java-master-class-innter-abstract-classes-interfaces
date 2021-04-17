@@ -43,6 +43,24 @@ public class Main {
         // When adding items to a Binary Search Tree, if the item to be added is less than the current item
         // the move to the left, if it is greater than the current item then move to the right.
         //
+        // The new item is added when an attempt to move in the required direction would involve following
+        // a null reference.
+        // Once again, duplicates are not allowed.
+        // Hint: to avoid typing loads of "addItem" lines, split a string into an array and create your
+        // list in a loop as in the example below.
         //
+        MyLinkedList list = new MyLinkedList(null);
+        list.traverse(list.getRoot());
+        // Create a string data array to avoid typing loads of addItem instructions:
+
+        String stringData = "5 7 3 3 9 8 2 1 0 4 6";
+
+        String [] data = stringData.split(" ");
+
+        for(String s : data) {
+            //System.out.println(s);
+            list.addItem(new Node(s));
+        }
+        list.traverse(list.getRoot());
     }
 }
